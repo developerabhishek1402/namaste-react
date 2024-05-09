@@ -32,9 +32,10 @@ Episode 1 : Inception
 Episode 2 - Igniting the App
 
 1. What is NPM - Ofcourse, it is !(Node Package Manager) - It is a repository for all the packages. There are tons of packages available on NPM.
-2. npm init - It will ask you some basic questions like package name, version, description etc. If you want to ignore these questions you can fire the command like : npm init -you
+2. npm init - It will ask you some basic questions like package name, version, description etc. If you want to ignore these questions you can fire the command like : npm init -y
 3. What is package.json - It is a configuration of our application which also keep tracks which packages are available in our application.
 4. What is bundler. - Bundler is useful for bundle our application and it makes our app to production ready. Basically it takes all our code and dependencies and put it at one place.
+	There are multiple bundlers available - browserify, webpack, vite, parcel etc
 5. There are 2 types of dependencies : 
 	1. Dev dependencies - It is only require for development purpose.
 	2. Normal dependencies - It is used in production as well.
@@ -43,4 +44,27 @@ Episode 2 - Igniting the App
    "~" - It means that it will do the major minor upgrade automatically.
 7. What is package-lock.json - It takes cares of the exact version of the packages which are installed.
 8. Transitive dependencies - When we use a package in our application - it is highly possible that those packages are also using some other packages too. Those are known as transitive dependencies.
-9. 
+9. What is npx - For executing any package we use npx.
+10. What is HMR - Stands for Hot Module Reloading. The use is when I modify anything in my application, it automatically reloads those changes in browser for us.
+11. Very Good Article about the features of Parcel : Give it your few minutes.
+    https://medium.com/@nikhildhariwal2004/parcel-is-a-beast-an-all-in-one-bundle-for-powerful-web-development-e79f8a70cbd6
+12. How to make our app configurable for older browsers using browserslist in the package.json
+
+
+
+Episode 3 : Laying the Foundation
+
+1. I have learned how to write scripts in the package.json to make our life easy as a developer. I created scripts to run my application with shorthand commands.
+2. JSX - JSX is basically here to make developer life easy. It is use to make the elements easily. JSX is different than HTML. It is not HTML inside JS. JSX is HTML like syntax.
+3. Babel - It is respoonsible to transpile the JSX. So that React can understand those code. It is also useful to convery our code for older browsers who does not understand ES6.
+4. JSX at the end of the day is nothing but React.createElement()
+5. When giving attributes to JSX we should write camelCase.
+6. React Components : 
+   1. Class Components - Class components are now outdated and it is not getting used now a days in industry.
+   2. Functional Components - It is nothing but a normal JS function. In simple terms, a function which returns some piece of JSX. Make sure to start the function name with Capital letters.
+7. Difference between React Element vs React Component - 
+8. To render a component inside render method we need to render it like 
+   root.render(<HeadingComponent />
+9. What is React Component Composition :  When we load a component inside another component, it is called as component composition
+10. We can inject any Javascript expression inside JSX using {} braces.
+11. Cross Site Scripting (XSS) attacks- JSX is so powerful that it automatically takes care of XSS attacks in your application. Everything converted to String before rendering.
