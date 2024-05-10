@@ -58,9 +58,21 @@
 
 .footer > ul {
     display: flex;
+    position:static;
+    float: right;
 }
 
 .footer > ul > li {
     padding : 10px;
     list-style: none;
+}
+
+
+.filter{
+    padding: 10px;
+}
+
+ .btn {
+    padding : px;
+    cursor: pointer;
 }
