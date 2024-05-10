@@ -31,7 +31,7 @@ Episode 1 : Inception
 
 Episode 2 - Igniting the App
 
-1. What is NPM - Ofcourse, it is !(Node Package Manager) - It is a repository for all the packages. There are tons of packages available on NPM.
+1. What is NPM - Ofcourse, it is (!Node Package Manager) - It is a repository for all the packages. There are tons of packages available on NPM.
 2. npm init - It will ask you some basic questions like package name, version, description etc. If you want to ignore these questions you can fire the command like : npm init -y
 3. What is package.json - It is a configuration of our application which also keep tracks which packages are available in our application.
 4. What is bundler. - Bundler is useful for bundle our application and it makes our app to production ready. Basically it takes all our code and dependencies and put it at one place.
@@ -68,3 +68,23 @@ Episode 3 : Laying the Foundation
 9. What is React Component Composition :  When we load a component inside another component, it is called as component composition
 10. We can inject any Javascript expression inside JSX using {} braces.
 11. Cross Site Scripting (XSS) attacks- JSX is so powerful that it automatically takes care of XSS attacks in your application. Everything converted to String before rendering.
+
+
+Episode 4 : Talk is Cheap, Show me the Code:
+
+1. Props : Props is a short form of properties. If we need to pass data between components, we use props. Props are normal arguments to the functions
+2. Config driven UI : Controlling the UI based on the data coming from the backend.
+3. Why do we need to give the key  - If we give the unique key react will only render the new item which is coming in DOM.
+4. Never use index as keys in React.
+
+
+
+Episode 5 : Let's get hooked
+1. Module cannot have multiple default exports.
+2. If we need to do multiple export from same file, then we need to use named export.
+3. State Variable
+4. React hooks is a normal JS utility function.
+5. State variables 
+6. Whenever a state variable updates, react rerender() the component.
+7. Reconsiliation Algorithm, React Fiber - 
+8. Virtual DOM is a representation of the actual DOM.
