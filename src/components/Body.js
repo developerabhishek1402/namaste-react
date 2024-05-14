@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import resObj from "../utils/mockData";
 import ShimmerUI from "./Shimmer";
+import {Link, NavLink} from 'react-router-dom'
 
 const Body = () => {
 
+    console.log("called")
    
     // const arr = useState(resObj) 
 
@@ -54,7 +56,7 @@ const Body = () => {
           <button className="btn" onClick={() => onSearchText()}>Search</button>
         </div>
         <button className="btn" onClick={() => {
-            const filteredRes = resList.filter(res => res.info.avgRating > 4.5);
+            const filteredRes = originalResList.filter(res => res.info.avgRating > 4);
             setResList(filteredRes);
             setCrossIcon(true);
         }
@@ -69,7 +71,7 @@ const Body = () => {
       <div className="res-cards-container">
         {
         resList && resList.map((res) => (
-          <RestaurantCard key={res.info.id} resData={res} />
+          <NavLink key={res.info.id} to={"/restaurants/"+res.info.id}><RestaurantCard resData={res} /></NavLink>
 
           ))}
       </div>
