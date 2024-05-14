@@ -96,3 +96,72 @@
     cursor: pointer;
     padding: 0 20px;
 }
+
+
+.menu-card {
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+    width: 300px;
+    margin-right: 20px; /* Spacing between cards */
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.menu-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%; /* Ensure items take full width within flex container */
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.item-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f44336;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
