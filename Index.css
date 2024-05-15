@@ -165,3 +165,11 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+
+.user-card{
+    padding: 0 10px;
+    height: 200px;
+    width: 210px;
+    border: 1px solid black;
+}
