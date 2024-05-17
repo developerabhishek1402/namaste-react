@@ -3,6 +3,8 @@ import RestaurantCard from "./RestaurantCard";
 import resObj from "../utils/mockData";
 import ShimmerUI from "./Shimmer";
 import {Link, NavLink} from 'react-router-dom'
+import useUserInternetStatus from "../utils/useUserInternetStatus";
+
 
 const Body = () => {
 
@@ -45,6 +47,13 @@ const Body = () => {
         setResList(originalResList)
       }
       
+    }
+
+
+    const userStatus = useUserInternetStatus()
+
+    if(userStatus === false){
+      return <h1>You are offline. Check your internet..</h1>
     }
 
 
