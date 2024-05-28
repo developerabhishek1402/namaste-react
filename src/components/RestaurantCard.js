@@ -1,7 +1,13 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/Constants";
+import UserContext from "../utils/UserContext";
 
 const RestaurantCard = (props) => {
     const {resData} = props;
+
+    const loggedInUserData = useContext(UserContext)
+
+    console.log(loggedInUserData)
 
     if (!resData) {
       return <div>No data available</div>; // Render an appropriate message or component
@@ -21,9 +27,22 @@ const RestaurantCard = (props) => {
         <h4>{avgRating} stars</h4>
         <h4>{costForTwo}</h4>
         <h4>{sla?.slaString}</h4>
+        <h4>{loggedInUserData.loggedInUser}</h4>
     </div>
   );
 };
+
+
+export const VegRestaurantCard = () => {
+  return (props) => {
+    return (
+      <>
+      <label className="absolute bg-green-500 rounded-lg m-3">Top Rated</label>
+      <RestaurantCard {...props} />
+      </>
+    )
+  }
+}
 
 
 export default RestaurantCard;
