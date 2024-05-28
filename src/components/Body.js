@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import { useState, useEffect, useContext } from "react";
+import RestaurantCard , {VegRestaurantCard} from "./RestaurantCard";
 import resObj from "../utils/mockData";
 import ShimmerUI from "./Shimmer";
 import {Link, NavLink} from 'react-router-dom'
 import useUserInternetStatus from "../utils/useUserInternetStatus";
-
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
 
@@ -24,12 +24,17 @@ const Body = () => {
     const [resList, setResList] = useState([])
     const [originalResList, setOriginalResList] = useState([]);
     const [crossIcon, setCrossIcon] = useState(false);
-    const [searchText, setSearchText] = useState('')
+    const [searchText, setSearchText] = useState('');
+
+    const VgRestaurantCard = VegRestaurantCard(RestaurantCard)
 
     useEffect(() => {
         fetchData();
     }, [])
     
+
+    const {loggedInUser, setUserName} = useContext(UserContext)
+
 
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
@@ -80,11 +85,19 @@ const Body = () => {
             setResList(originalResList)
         }}>X</button>}
         </div>
+        <div className="m-4 p-4">
+        <label>Username</label>
+        <input type="text" className="border border-black p-2" value={loggedInUser} onChange={(e) => setUserName(e.target.value)} />
+        </div>
       </div>
       <div className="flex flex-wrap">
         {
         resList && resList.map((res) => (
-          <NavLink key={res.info.id} to={"/restaurants/"+res.info.id}><RestaurantCard resData={res} /></NavLink>
+          <NavLink key={res.info.id} to={"/restaurants/"+res.info.id}>
+
+          {res.info.totalRatingsString === '1K+' ? <VgRestaurantCard resData={res} /> : <RestaurantCard resData={res} />}
+
+          </NavLink>
 
           ))}
       </div>
