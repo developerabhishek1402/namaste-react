@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/Constants";
 import { Link } from "react-router-dom";
 import useUserInternetStatus from "../utils/useUserInternetStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
@@ -16,7 +17,12 @@ const Header = () => {
       btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")
     }
 
-    const uerrInternetStatus = useUserInternetStatus()
+    const uerrInternetStatus = useUserInternetStatus();
+
+    //Subscribing to the store using selector
+    const cart = useSelector((store) => store.cart.items);
+
+    console.log(cart)
 
     return (
       <div className="flex justify-between shadow-lg sm:bg-yellow-50 lg:bg-red-200">
@@ -34,7 +40,7 @@ const Header = () => {
             <li className="px-4"><Link to="/contact-us">Contact Us</Link></li>
             <li className="px-4"><Link to="/about">About Us</Link></li>
             <li className="px-4"><Link to="/grocery">Grocery</Link></li>
-            <li className="px-4">Cart</li>
+            <li className="px-4"><Link to="/cart">Cart ({cart.length})</Link></li>
             <button className="login" onClick={() => onClick()}>{btnName}</button>
           </ul>
         </div>
